@@ -1,7 +1,7 @@
 # hpo-cld-sql-prep
 Prepare HP Omnicept Cognitive Load (HPO-CLD) files for loading into SQL database 
 
-The primary use for this is project is to prepare the HPO-CLD CSV files for loading into (PostgreSQL)[https://www.postgresql.org/].
+The primary use for this is project is to prepare the HPO-CLD CSV files for loading into [PostgreSQL](https://www.postgresql.org/).
 The HP-CLD files are NOT provided in this project. You must acquire and download them yourself using appropriate means.
 
 For convenience, we recommend using [DBeaver](https://dbeaver.io/) for interactive work with the database to create tables and load the data.
