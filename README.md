@@ -44,4 +44,24 @@ Start DBeaver using Flatpak
 flatpak run io.dbeaver.DBeaverCommunity
 ``` 
 
+Create Tables
+------------
+* In DBeaver, establish a database connection to the running PostgreSQL container.
 
+* Open a New SQL Script page.
+* Using whatever method is convenient, copy the SQL from the project_root/sql/create_tables.sql file into the SQL Script window.
+* Run the script to create the tables.
+
+Load Files
+----------
+* Open a New SQL Script page.
+* Using whatever method is convenient, copy the SQL from the project_root/sql/load_files.sql file into the SQL Script window.
+* Run the script to load the data files into the tables.
+ 
+Drop Tables
+------------
+* Open a New SQL Script page.
+* Using whatever method is convenient, copy the SQL from the project_root/sql/drop_tables.sql file into the SQL Script window.
+* Run the script to DROP the tables which deletes all the data previously loaded.
+
+ 
