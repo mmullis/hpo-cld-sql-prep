@@ -64,4 +64,11 @@ Drop Tables
 * Using whatever method is convenient, copy the SQL from the project_root/sql/drop_tables.sql file into the SQL Script window.
 * Run the script to DROP the tables which deletes all the data previously loaded.
 
- 
+SQL Queries
+===========
+
+Check Row Counts
+----------------
+```
+select (select count(*) from demographics) as "demographics", (select count(*) from labels) as "labels", (select count(*) from bitalino) as "bitalino", (select count(*) from tobii) as "tobii", (select count(*) from event_log) as "event_log";
+```
