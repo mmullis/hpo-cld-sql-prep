@@ -19,6 +19,7 @@ LOAD_FILE="${LOAD_FILES_DIR}/${TABLE_NAME}_load_file.csv"
 cat csv_headers/${TABLE_NAME}_header.csv > ${LOAD_FILE}
 find ./dataset/HPO-CLD/ -iname \*${TABLE_NAME}\*.csv -exec cat {} \; | grep -i -v ${SOURCE_HEADER_TEXT} | ${BIN_DIR}/fix_demographics.rb %  > ${TEMP_RAW_FILE}
 cat ${TEMP_RAW_FILE} >> ${LOAD_FILE}
+rm ${TEMP_RAW_FILE}
 dos2unix ${LOAD_FILE}
 
 TABLE_NAME="labels"
@@ -28,6 +29,7 @@ LOAD_FILE="${LOAD_FILES_DIR}/${TABLE_NAME}_load_file.csv"
 cat csv_headers/${TABLE_NAME}_header.csv > ${LOAD_FILE}
 find ./dataset/HPO-CLD/ -iname \*${TABLE_NAME}\*.csv -exec cat {} \; | grep -i -v ${SOURCE_HEADER_TEXT} > ${TEMP_RAW_FILE}
 cat ${TEMP_RAW_FILE} >> ${LOAD_FILE}
+rm ${TEMP_RAW_FILE}
 dos2unix ${LOAD_FILE}
 
 TABLE_NAME="event_log"
@@ -37,6 +39,7 @@ LOAD_FILE="${LOAD_FILES_DIR}/${TABLE_NAME}_load_file.csv"
 cat csv_headers/${TABLE_NAME}_header.csv > load_files/${TABLE_NAME}_load_file.csv
 find ./dataset/HPO-CLD/ -iname \*${TABLE_NAME}\*.csv | grep -i -v ${SOURCE_HEADER_TEXT} | xargs -I % ${BIN_DIR}/inject_participant_id.rb %  > ${TEMP_RAW_FILE}
 cat ${TEMP_RAW_FILE} >> ${LOAD_FILE}
+rm ${TEMP_RAW_FILE}
 dos2unix ${LOAD_FILE}
 
 TABLE_NAME="tobii"
@@ -46,6 +49,7 @@ LOAD_FILE="${LOAD_FILES_DIR}/${TABLE_NAME}_load_file.csv"
 cat csv_headers/${TABLE_NAME}_header.csv > load_files/${TABLE_NAME}_load_file.csv
 find ./dataset/HPO-CLD/ -iname \*${TABLE_NAME}\*.csv | grep -i -v ${SOURCE_HEADER_TEXT} | xargs -I % ${BIN_DIR}/inject_participant_id.rb %  > ${TEMP_RAW_FILE}
 cat ${TEMP_RAW_FILE} >> ${LOAD_FILE}
+rm ${TEMP_RAW_FILE}
 dos2unix ${LOAD_FILE}
 
 TABLE_NAME="bitalino"
@@ -55,4 +59,7 @@ LOAD_FILE="${LOAD_FILES_DIR}/${TABLE_NAME}_load_file.csv"
 cat csv_headers/${TABLE_NAME}_header.csv > load_files/${TABLE_NAME}_load_file.csv
 find ./dataset/HPO-CLD/ -iname \*${TABLE_NAME}\*.csv | grep -i -v ${SOURCE_HEADER_TEXT} | xargs -I % ${BIN_DIR}/inject_participant_id.rb %  > ${TEMP_RAW_FILE}
 cat ${TEMP_RAW_FILE} >> ${LOAD_FILE}
+rm ${TEMP_RAW_FILE}
 dos2unix ${LOAD_FILE}
+
+echo "Build Files Complete"
