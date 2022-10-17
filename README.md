@@ -7,6 +7,19 @@ The HP-CLD files are NOT provided in this project. You must acquire and download
 For convenience, we recommend using [DBeaver](https://dbeaver.io/) for interactive work with the database to create tables and load the data.
 All instructions are for running applications on Linux or in a compatible environment.
 
+Pre-Requisites
+--------------
+Ensure the following programs are installed. On Windows, using WSL with Ubuntu is preferred.
+* unzip
+* dos2unix
+* ruby
+
+Example installation on Ubuntu:
+```
+sudo apt update
+sudo apt install -y unzip dos2unix ruby
+```
+
 Setup HPO-CLD files
 -------------------
 After downloading the HPO-CLD dataset zip file, it must be unpacked in "./dataset/" for the build scripts to find the input files.
